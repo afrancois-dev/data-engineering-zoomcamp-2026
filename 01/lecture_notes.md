@@ -161,12 +161,11 @@ run ingestion script
 docker run -it \
   --network=pipeline_default \
   taxi_ingest:v001 \
-    --user=root \
-    --password=root \
-    --host=pgdatabase \
-    --port=5432 \
-    --db=ny_taxi \
-    --table=yellow_taxi_trips
+    --user=postgres \
+    --password=postgres \
+    --host=db \
+    --port=5433 \
+    --db=ny_taxi
 ```
 
 # SQL Refresher
