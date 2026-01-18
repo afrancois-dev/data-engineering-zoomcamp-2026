@@ -1,12 +1,13 @@
 
-# Question 1
+# Docker
+## Question 1
 ```
 docker run -it --entrypoint=bash python:3.13-slim
 uv pip -V
 ```
 answer : 25.3
 
-# Question 2
+## Question 2
 ```
 docker-compose up
 docker run -it \
@@ -20,7 +21,7 @@ docker run -it \
 ```
 answer: db=5432 (as pgadmin is inside docker-compose network, it should use the internal port)
 
-# Question 3
+## Question 3
 
 ```
 select count(*) from green_trips
@@ -29,7 +30,7 @@ and trip_distance <= 1
 ```
 answer: 8007
 
-# Question 4
+## Question 4
 
 ```
 select lpep_pickup_datetime::date, max(trip_distance) as max_distance 
@@ -40,7 +41,7 @@ order by max_distance DESC
 ```
 answer: 2025-11-14 (if we refer to the single longest individual trip)
 
-# Question 5
+## Question 5
 
 ```
 SELECT
@@ -57,7 +58,7 @@ limit 1
 ```
 answer: East Harlem North
 
-# Question 6
+## Question 6
 ```
 SELECT
     tip_amount,
@@ -76,3 +77,8 @@ limit 1
 answer: Yorkville West
 
 # Terraform
+
+## Question 7
+```
+terraform init, terraform apply -auto-approve, terraform destroy
+```
