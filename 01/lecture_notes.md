@@ -245,12 +245,12 @@ terraform init
 
 Check changes to new infra plan
 ```
-terraform plan -var="project=<your-gcp-project-id>"
+terraform plan -var="project=endless-office-485017-f8"
 ```
 
 apply changes to create infra
 ```
-terraform apply -var="project=<your-gcp-project-id>"
+terraform apply -var="project=endless-office-485017-f8"
 # Delete infra after your work, to avoid costs on any running services
 terraform destroy
 ```
