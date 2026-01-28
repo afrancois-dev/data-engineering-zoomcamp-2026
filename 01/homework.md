@@ -79,9 +79,7 @@ answer: Yorkville West
 # Terraform
 
 ## Question 7
-```
-terraform init, terraform apply -auto-approve, terraform destroy
-```
+answer: terraform init, terraform apply -auto-approve, terraform destroy
 
 ```
 cd terraform/

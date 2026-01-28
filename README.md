@@ -1,2 +1,2 @@
 # data-engineering-zoomcamp-2026
-Workshop codespaces
+- Within each folder, you will find an homework.md file
