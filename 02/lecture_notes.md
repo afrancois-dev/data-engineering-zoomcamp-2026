@@ -43,3 +43,10 @@ docker compose up -d
 - first taxi pipeline on kestra !
   - extract, transform and query tasks
     - underneath output -> preview Tasks -> 2 files (data.json (we started from here) and product.json)
+
+## 2.3.2
+- https://www.youtube.com/watch?v=Z9ZmmwtXDcU
+
+## 2.3.3
+- https://www.youtube.com/watch?v=1pu_C_oOAMA
+ - scheduling : backfill thanks to the UI, and check whether data is here through pgadmin (local db)
