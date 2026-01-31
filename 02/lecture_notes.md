@@ -36,3 +36,10 @@ docker compose up -d
 - UI Exploration (Logs, Gantt, Execution...)
 
 ## 2.2.3
+- python orchestration
+  - https://www.youtube.com/watch?v=VAHm0R_XjqI
+
+## 2.3.1 
+- first taxi pipeline on kestra !
+  - extract, transform and query tasks
+    - underneath output -> preview Tasks -> 2 files (data.json (we started from here) and product.json)
