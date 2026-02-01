@@ -1,7 +1,6 @@
 # kestra
 
 NB: I used backfill functionality to get data for both dataset from 2021-01 to 2021-07
-cf. screenshot
 
 1. Within the execution for Yellow Taxi data for the year 2020 and month 12: what is the uncompressed file size (i.e. the output file yellow_tripdata_2020-12.csv of the extract task)?
 ```
@@ -31,9 +30,10 @@ On pgadmin :
 SELECT count(*) 
 FROM yellow_tripdata
 WHERE filename ILIKE 'yellow_tripdata_2020-%.csv';
--- 21458383
+-- 24648499
+
 ```
-answer: 21458383
+answer: 24,648,499
 
 4. How many rows are there for the Green Taxi data for all CSV files in the year 2020?
 
@@ -59,7 +59,7 @@ NB: Not the best solution. On my mind, the best way is to check directly in the 
 answer: 1,925,152
 
 6. How would you configure the timezone to New York in a Schedule trigger?
-Add a timezone property set to EST in the Schedule trigger configuration
-Add a timezone property set to America/New_York in the Schedule trigger configuration
-Add a timezone property set to UTC-5 in the Schedule trigger configuration
-Add a location property set to New_York in the Schedule trigger configuration
+- I checked the doc below
+  - https://kestra.io/docs/workflow-components/triggers/schedule-trigger
+
+answer: Add a timezone property set to America/New_York in the Schedule trigger configuration
