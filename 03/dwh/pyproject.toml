@@ -1,0 +1,10 @@
+[project]
+name = "dwh"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "google-cloud-storage>=2.0.0",
+    "google-api-core>=2.0.0",
+]
