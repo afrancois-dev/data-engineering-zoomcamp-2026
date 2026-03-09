@@ -211,3 +211,10 @@ __marimo__/
 .terraform.lock.hcl
 
 .bruin.yml
+logs/runs
+logs/*.log
+*.py[cod]
+logs/queries
+
+# Spark
+**/yellow_2025_11_repartioned/
