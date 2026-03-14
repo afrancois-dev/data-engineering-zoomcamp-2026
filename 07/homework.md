@@ -1,13 +1,19 @@
 # Redpanda
 
 ## Beforehand
-- setup python (with uv)
+- set-up python (with uv)
  - `pip install uv`
  - `uv add kafka-python pandas pyarrow`
-- setup docker
+ - `uvx pgcli -h localhost -p 5432 -U postgres -d postgres`
+- set-up docker
  - get the docker-compose.yml from github repo.
  - `docker compose up redpanda -d`
  - `docker compose logs redpanda -f`
+
+- useful commands for redpanda
+```
+docker exec -it redpanda-redpanda-1 rpk topic delete rides && docker exec -it redpanda-redpanda-1 rpk topic create rides
+```
 
 We are going to 
     1. create a producer

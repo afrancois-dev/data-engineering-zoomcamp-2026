@@ -1,4 +1,13 @@
 services:
+  postgres:
+    image: postgres:18
+    restart: on-failure
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
   redpanda:
     image: redpandadata/redpanda:v25.3.9
     command:
