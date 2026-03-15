@@ -1,4 +1,6 @@
+from typing import Optional
 import json
+import pandas as pd
 from dataclasses import dataclass, asdict
 
 
@@ -8,7 +10,7 @@ class Ride:
     DOLocationID: int
     trip_distance: float
     tip_amount: float
-    passenger_count: int
+    passenger_count: Optional[int]
     total_amount: float
     lpep_pickup_datetime: int  # epoch milliseconds
     lpep_dropoff_datetime: int # epoch milliseconds
@@ -19,7 +21,7 @@ def ride_from_row(row):
         DOLocationID=int(row["DOLocationID"]),
         trip_distance=float(row["trip_distance"]),
         tip_amount=float(row["tip_amount"]),
-        passenger_count=int(row["passenger_count"]),
+        passenger_count=int(row["passenger_count"]) if pd.notna(row["passenger_count"]) else None,
         total_amount=float(row["total_amount"]),
         lpep_pickup_datetime=int(row["lpep_pickup_datetime"].timestamp() * 1000),
         lpep_dropoff_datetime=int(row["lpep_dropoff_datetime"].timestamp() * 1000)

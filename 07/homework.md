@@ -36,3 +36,19 @@ Redpanda Cluster
 answer: v25.3.9
 
 2. Sending data to Redpanda
+
+NB: lpep_pickup_datetime and lpep_dropofdatetime have been converted to int and then timestamp like the workshop
+
+```
+Sent: Ride(PULocationID=195, DOLocationID=33, trip_distance=3.0, tip_amount=0.0, passenger_count=None, total_amount=19.6, lpep_pickup_datetime=1761952980000, lpep_dropoff_datetime=1761953820000)
+took 512.84 seconds
+```
+
+
+answer: 300 seconds (closest value from 512)
+
+3. Consumer - trip distance
+- on pgcli
+`select count(*) from processed_events where trip_distance > 5;`
+
+answer: 
