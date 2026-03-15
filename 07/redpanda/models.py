@@ -21,7 +21,7 @@ def ride_from_row(row):
         DOLocationID=int(row["DOLocationID"]),
         trip_distance=float(row["trip_distance"]),
         tip_amount=float(row["tip_amount"]),
-        passenger_count=int(row["passenger_count"]) if pd.notna(row["passenger_count"]) else None,
+        passenger_count=row["passenger_count"],
         total_amount=float(row["total_amount"]),
         lpep_pickup_datetime=int(row["lpep_pickup_datetime"].timestamp() * 1000),
         lpep_dropoff_datetime=int(row["lpep_dropoff_datetime"].timestamp() * 1000)
