@@ -27,3 +27,11 @@ CREATE TABLE IF NOT EXISTS green_trips_session_windowed (
     num_trips BIGINT,
     PRIMARY KEY (window_start, window_end, PULocationID)
 );
+
+-- question 6
+CREATE TABLE green_trips_tumble_windowed_1h (
+    window_start TIMESTAMP(3),
+    window_end TIMESTAMP(3),
+    total_tips DOUBLE PRECISION,
+    PRIMARY KEY (window_start)
+)

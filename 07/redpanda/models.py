@@ -12,8 +12,8 @@ class Ride:
     tip_amount: float
     passenger_count: Optional[int]
     total_amount: float
-    lpep_pickup_datetime: int  # epoch milliseconds
-    lpep_dropoff_datetime: int # epoch milliseconds
+    lpep_pickup_datetime: str  # yyyy-MM-dd HH:mm:ss
+    lpep_dropoff_datetime: str # yyyy-MM-dd HH:mm:ss
     
 def ride_from_row(row):
     return Ride(
@@ -23,8 +23,8 @@ def ride_from_row(row):
         tip_amount=float(row["tip_amount"]),
         passenger_count=int(row["passenger_count"]) if pd.notna(row["passenger_count"]) else None,
         total_amount=float(row["total_amount"]),
-        lpep_pickup_datetime=int(row["lpep_pickup_datetime"].timestamp() * 1000),
-        lpep_dropoff_datetime=int(row["lpep_dropoff_datetime"].timestamp() * 1000)
+        lpep_pickup_datetime=row["lpep_pickup_datetime"].strftime('%Y-%m-%d %H:%M:%S'),
+        lpep_dropoff_datetime=row["lpep_dropoff_datetime"].strftime('%Y-%m-%d %H:%M:%S')
     )
 
 def ride_serializer(ride):

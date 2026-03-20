@@ -3,11 +3,12 @@ from pyflink.table import EnvironmentSettings, StreamTableEnvironment
 
 
 def create_source(t_env):
-    t_env.execute_sql("""
-        CREATE TABLE events (
+    table_name = "events"
+    t_env.execute_sql(f"""
+        CREATE TABLE {table_name} (
             tip_amount DOUBLE,
-            lpep_pickup_datetime BIGINT,
-            event_timestamp AS TO_TIMESTAMP_LTZ(lpep_pickup_datetime, 3),
+            lpep_pickup_datetime VARCHAR,
+            event_timestamp AS TO_TIMESTAMP(lpep_pickup_datetime, 'yyyy-MM-dd HH:mm:ss'),
             WATERMARK FOR event_timestamp AS event_timestamp - INTERVAL '5' SECOND
         ) WITH (
             'connector' = 'kafka',
@@ -17,6 +18,7 @@ def create_source(t_env):
             'format' = 'json'
         );
     """)
+    return table_name
 
 
 def create_sink(t_env):
@@ -30,11 +32,12 @@ def create_sink(t_env):
         ) WITH (
             'connector' = 'jdbc',
             'url' = 'jdbc:postgresql://postgres:5432/postgres',
-            'table-name' = {table_name},
+            'table-name' = '{table_name}',
             'username' = 'postgres',
             'password' = 'postgres'
         );
     """)
+    return table_name
 
 
 def run_tumbling_job():

@@ -1,0 +1,5 @@
+# Supprimer et recréer le topic
+docker exec -it redpanda-redpanda-1 rpk topic delete green-trips
+docker exec -it redpanda-redpanda-1 rpk topic create green-trips
+# Vider la table SQL
+docker exec -it redpanda-postgres-1 psql -U postgres -d postgres -c "TRUNCATE TABLE green_trips_session_windowed;"
